@@ -1,24 +1,24 @@
 # Personalized Recipe Generator ![Build Status](https://img.shields.io/badge/build-passing-brightgreen) ![Version](https://img.shields.io/badge/version-1.0.0-blue) ![License](https://img.shields.io/badge/license-MIT-yellowgreen)
 
 ## Project Description
-The **Personalized Recipe Generator** is a web application designed to help home cooks, food enthusiasts, and individuals with dietary restrictions discover personalized recipes based on their available ingredients and dietary preferences. Users can save their favorite recipes, share them with others, and contribute to a community recipe database.
+The **Personalized Recipe Generator** is a web application designed to help home cooks, food enthusiasts, and individuals optimize their meal planning. Users can input available ingredients and dietary preferences to generate personalized recipes, save their favorites, plan meals for the week, and create shopping lists based on their selections.
 
 ## Features
 - User authentication and profile management
-- Ingredient input with dietary preferences and restrictions
-- Dynamic recipe generation based on available ingredients
-- Save and share favorite recipes
-- Community feature for users to submit and rate recipes
+- Ingredient-based recipe suggestions
+- Meal planning and shopping list generation
+- User feedback and rating system for recipes
+- Integration with external APIs for nutritional information
 
 ## Tech Stack
 ### Frontend
-- **React** ![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black)
+- **Next.js** 🌐
 
 ### Backend
-- **Node.js** ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=nodedotjs&logoColor=white)
+- **FastAPI** 🚀
 
 ### Database
-- **MongoDB** ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat&logo=mongodb&logoColor=white)
+- **PostgreSQL** 🗄️
 
 ## Installation
 To set up the project locally, follow these steps:
@@ -29,43 +29,65 @@ git clone https://github.com/gopal-prakash-codes/personalized-recipe-generator.g
 - Navigate to the project directory
 bash
 cd personalized-recipe-generator
-- Install the dependencies
+- Create a virtual environment
+bash
+python -m venv venv
+- Activate the virtual environment
+bash
+# On Windows
+venv\Scripts\activate
+
+# On macOS/Linux
+source venv/bin/activate
+- Install the required dependencies
+bash
+pip install -r requirements.txt
+- Set up the PostgreSQL database and update the connection settings in the `.env` file
+- Run database migrations
+bash
+alembic upgrade head
+- Start the FastAPI server
+bash
+uvicorn app.main:app --reload
+- Navigate to the frontend directory
+bash
+cd frontend
+- Install frontend dependencies
 bash
 npm install
-- Set up your environment variables (create a `.env` file)
+- Start the Next.js development server
 bash
-touch .env
-- Start the development server
-bash
-npm start
+npm run dev
 ## Usage
-Once the application is running, navigate to `http://localhost:3000` in your web browser. You can create an account, log in, and start generating personalized recipes by inputting your available ingredients and dietary preferences.
+Once the application is running, navigate to `http://localhost:3000` in your web browser. You can create an account, log in, and start generating personalized recipes based on your available ingredients and dietary preferences.
 
 ## API Documentation
-For detailed API documentation, please refer to the [API Documentation](https://github.com/gopal-prakash-codes/personalized-recipe-generator/wiki/API-Documentation).
+The API is built using FastAPI and provides endpoints for:
+- User authentication
+- Recipe generation
+- Meal planning
+- Feedback submission
+
+For detailed API documentation, visit the `/docs` endpoint after starting the server.
 
 ## Testing
-To run the tests for this project, use the following command:
+To run the tests for the application, execute the following command:
 bash
-npm test
+pytest
 ## Deployment
-To deploy the application, follow these steps:
-
-- Build the application
-bash
-npm run build
-- Deploy the `build` folder to your preferred hosting service (e.g., Heroku, Vercel, etc.).
+For deploying the application, consider using platforms like Heroku or AWS. Ensure that environment variables are set correctly for production, and follow the respective platform's deployment guidelines.
 
 ## Contributing
-We welcome contributions! Please follow these steps to contribute:
-
+We welcome contributions! Please follow these steps:
 - Fork the repository
-- Create a new branch
-- Make your changes
-- Submit a pull request
+- Create a new branch (`git checkout -b feature/YourFeature`)
+- Make your changes and commit them (`git commit -m 'Add some feature'`)
+- Push to the branch (`git push origin feature/YourFeature`)
+- Open a pull request
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
-- Special thanks to the contributors and the open-source community for their support and resources.
+- Thanks to the contributors and the open-source community for their support and resources.
+- Special thanks to the creators of FastAPI, Next.js, and PostgreSQL for their amazing frameworks and tools.
